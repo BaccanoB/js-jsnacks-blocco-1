@@ -12,19 +12,22 @@ console.log(listaCognomi);
 
 // selezionare un nome casuale dalla lista
 
-var nomeCasuale;
+function generatoreNome(nomi,cognomi){
+
+    var randomNome = nomi[Math.floor(Math.random()*nomi.length)];
+    console.log("Nome Random",randomNome);
+
+    var randomCognome = cognomi[Math.floor(Math.random()*cognomi.length)];
+    console.log("Cognome Random",randomCognome);
+
+    var nomeCasuale = randomNome + " " + randomCognome;
+
+    return nomeCasuale;
+}
 
 for (var i = 0; i < 10; i++){
     
-    var randomNome = listaNomi[Math.floor(Math.random()*listaNomi.length)];
-    console.log("Nome Random",randomNome);
-
-    var randomCognome = listaCognomi[Math.floor(Math.random()*listaCognomi.length)];
-    console.log("Cognome Random",randomCognome);
-
-    nomeCasuale = randomNome + " " + randomCognome;
+    var nomeCasuale =  generatoreNome(listaNomi,listaCognomi);
     console.log("Nome Casuale",nomeCasuale);
     document.getElementById("lista").innerHTML += "<li>" + nomeCasuale + "</li>";
 }
-
-
